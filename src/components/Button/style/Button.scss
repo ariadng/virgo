@@ -1,0 +1,83 @@
+// Virgo Component: Button
+// ================================================================================================
+
+:root {
+	--component-button-height-sm	: 4rem;
+	--component-button-height-md	: 5rem;
+	--component-button-height-lg	: 6rem;
+	--component-button-height-xl	: 7rem;
+	--component-button-height		: var(--component-button-height-md);
+	--component-button-radius		: var(--radius, 0);
+	--component-button-padding		: 0 2rem;
+	
+	--component-button-text			: var(--color-secondary-30);
+	--component-button-bg			: var(--color-secondary-80);
+	--component-button-hover-text	: var(--color-secondary-30);
+	--component-button-hover-bg		: var(--color-secondary-70);
+	--component-button-pressed-text	: var(--color-secondary-30);
+	--component-button-pressed-bg	: var(--color-secondary-70);
+}
+
+button, a.button {
+
+	// [*] Global Style
+
+	display		: inline-flex;
+	align-items : center;
+	box-sizing	: border-box;
+	border		: none;
+	cursor		: pointer;
+	font-weight	: 600;
+	justify-content	: center;
+
+	height			: var(--component-button-height);
+	padding 		: var(--component-button-padding);
+	border-radius	: var(--component-button-radius);
+	background-color: var(--component-button-bg) !important;
+	color			: var(--component-button-text);
+
+	transition		: var(--transition);
+
+	// - Hovered
+	&:hover {
+		background: var(--component-button-hover-bg) !important;
+		color: var(--component-button-hover-text);
+	}
+
+	// - Pressed
+	&:active {
+		opacity: 0.75;
+	}
+
+	// [*] Sizing
+
+	// - Small
+	&.small {
+		--component-button-height: var(--component-button-height-sm);
+		--component-button-padding: 1rem;
+	}
+
+	// [*] Style
+
+	// - Link
+	&.link {
+		--component-button-text: var(--color-primary-30);
+		--component-button-bg: transparent;
+		--component-button-hover-text: var(--color-primary-50);
+		--component-button-hover-bg: transparent;
+		
+	}
+
+	// [*] Color Variations
+
+	// - Primary
+	&.primary {
+		--component-button-bg: var(--color-primary-40);
+		--component-button-text: var(--color-primary-95);
+		--component-button-hover-text: var(--color-primary-90);
+		--component-button-hover-bg: var(--color-primary-50);
+		--component-button-pressed-text: var(--color-primary-90);
+		--component-button-pressed-bg: var(--color-primary-50);
+	}
+	
+}

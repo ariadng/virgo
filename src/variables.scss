@@ -1,0 +1,112 @@
+// Virgo Style Configuration File
+// ================================================================================================
+
+// [*] Table of Contents
+// ------------------------------------------------------------------------------------------------
+// 1. Viewport variables for CSS Media Queries
+// 2. Dimension
+// 3. Colors
+// 4. Typography
+// ================================================================================================
+
+// 1. Viewport variables for CSS Media Queries
+// ------------------------------------------------------------------------------------------------
+$viewport-mobile	: 480px;	// (sm) Phone (480px and below)
+$viewport-tablet	: 1024px;	// (md) Tablet (481px to 1024px)
+$viewport-laptop	: 1440px;	// (lg) Laptop (1025px to 1440px)
+$viewport-desktop	: 1920px;	// (xl) Desktop (1441px to 1920px)
+// (xxl) 1921px and beyond...
+
+// 2. Dimension
+// ------------------------------------------------------------------------------------------------
+:root {
+	--base: 10px;			// Base size any other elements, useful for responsive design
+	--radius: 0.6rem;		// To be used for border-radius property
+}
+
+// 3. Colors
+// ------------------------------------------------------------------------------------------------
+
+// - Luminance levels to define color palette
+$luminances: 10, 20, 30, 40, 50, 60, 70, 80, 90, 95, 99;
+
+// - Primary Color
+$color-primary-hue: 200;
+$color-primary-saturation: 100%;
+@each $lumi in $luminances {
+	:root {
+		--color-primary-#{$lumi}: hsl(#{$color-primary-hue}, #{$color-primary-saturation}, #{$lumi * 1%});
+	}
+}
+
+// - Secondary Color
+$color-secondary-hue: 200;
+$color-secondary-saturation: 20%;
+@each $lumi in $luminances {
+	:root {
+		--color-secondary-#{$lumi}: hsl(#{$color-secondary-hue}, #{$color-secondary-saturation}, #{$lumi * 1%});
+	}
+}
+
+// - Tertiary Color
+$color-tertiary-hue: 170;
+$color-tertiary-saturation: 70%;
+@each $lumi in $luminances {
+	:root {
+		--color-tertiary-#{$lumi}: hsl(#{$color-tertiary-hue}, #{$color-tertiary-saturation}, #{$lumi * 1%});
+	}
+}
+
+// - Error Color
+$color-error-hue: 10;
+$color-error-saturation: 100%;
+@each $lumi in $luminances {
+	:root {
+		--color-error-#{$lumi}: hsl(#{$color-error-hue}, #{$color-error-saturation}, #{$lumi * 1%});
+	}
+}
+
+// - Warning Color
+$color-warning-hue: 50;
+$color-warning-saturation: 100%;
+@each $lumi in $luminances {
+	:root {
+		--color-warning-#{$lumi}: hsl(#{$color-warning-hue}, #{$color-warning-saturation}, #{$lumi * 1%});
+	}
+}
+
+// - All color default variables
+:root {
+	--color-primary		: var(--color-primary-40);
+	--color-secondary	: var(--color-secondary-40);
+	--color-tertiary	: var(--color-tertiary-40);
+	--color-error		: var(--color-error-40);
+	--color-warning		: var(--color-warning-40);
+}
+
+// [4] Typography
+// ------------------------------------------------------------------------------------------------
+:root {
+	// Defaults
+	--font-sans		: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica", sans-serif;
+	--font-serif	: "Georgia", serif;
+	--font-mono		: "Monaco", "Consolas", "Menlo", monospace;
+	--font-size		: 1.6rem;
+	
+	// Font configuration
+	--heading-font		: var(--font-sans);
+	--heading-weight	: 600;
+	--body-font			: var(--font-sans);
+	--body-weight		: 400;
+	--body-size			: var(--font-size);
+	--body-color		: var(--color-secondary-20);
+}
+
+// [5] Transition
+// ------------------------------------------------------------------------------------------------
+:root {
+	--transition-duration: 0.3s;
+	--transition-easing: ease-out;
+	--transition-property: all;
+	--transition: var(--transition-property)var(--transition-duration) var(--transition-easing);
+}

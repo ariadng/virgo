@@ -1,0 +1,37 @@
+// Virgo Component: Toast
+// ================================================================================================
+
+:root {
+	--component-toast-padding	: 1em;
+	--component-toast-bg		: var(--color-secondary-10, #111);
+	--component-toast-text		: var(--color-secondary-95, #eee);
+	--component-toast-radius	: var(--radius, 0);
+	--component-toast-shadow	: 0 0.3rem 0.8rem #00000044;
+}
+
+.toast {
+	padding				: var(--component-toast-padding);
+	background-color	: var(--component-toast-bg);
+	border-radius		: var(--component-toast-radius);
+	box-shadow			: var(--component-toast-shadow);
+	color				: var(--component-toast-text);
+
+	display: flex;
+	align-items: center;
+
+	// Actions
+	.action {
+		padding-left: var(--component-toast-padding);
+
+		button.close {
+			text-transform: uppercase;
+			
+			&.link {
+				--component-button-text: var(--color-primary-40);
+				--component-button-hover-text: var(--color-primary-60);
+				--component-button-padding: 0 0.5rem;
+			}
+		}
+	}
+
+} // .toast

@@ -1,0 +1,87 @@
+// Virgo Typography Stylesheet
+// ================================================================================================
+
+// [*] Table of Contents
+// ------------------------------------------------------------------------------------------------
+// [1] Globals
+// [2] Headings
+// [3] Paragraph
+// [4] Utilities
+// ================================================================================================
+
+:root {
+	--mark-bg: var(--color-primary-90);
+}
+
+// [1] Globals
+// ------------------------------------------------------------------------------------------------
+body {
+	// - Style
+	font-family	: var(--body-font, sans-serif);
+	font-weight	: 400;
+	color		: var(--body-color);
+	// - Size
+	font-size	: var(--body-size, 1.6rem);
+	line-height	: 1;
+}
+
+// [2] Headings
+// ------------------------------------------------------------------------------------------------
+h1, h2, h3, h4, h5 {
+	margin			: 1.25em 0 calc(0.5em + 1rem);
+	font-weight		: 600;
+	line-height		: 1.2;
+}
+
+h1 {
+	line-height		: 1.05;
+	letter-spacing	: -0.1rem;
+	font-size		: 2.75em;
+}
+
+h2 {
+	font-size		: 2.00em;
+	letter-spacing	: -0.1rem;
+	line-height		: 1.1;
+}
+
+h3 {
+	font-size		: 1.50em;
+	letter-spacing	: -0.1rem;
+}
+
+h4 {
+	font-size: 1.30em;
+}
+
+h5 {
+	font-size: 1.20em;
+}
+
+h6 {
+	font-size: 1.10em;
+}
+
+// [3] Paragraph
+// ------------------------------------------------------------------------------------------------
+p {
+	margin-top		: 0;
+	margin-bottom	: 1em;
+	line-height		: 1.68;
+}
+
+p.lead {
+	font-size: 2em;
+	line-height: 1.3;
+	font-weight: 300;
+	color: var(--color-text-light);
+}
+
+// [4] Utilities
+// ------------------------------------------------------------------------------------------------
+
+mark {
+	background-color: var(--mark-bg);
+	padding: 0.2em;
+	border-radius: 0.3em;
+}
